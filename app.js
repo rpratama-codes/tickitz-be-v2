@@ -15,7 +15,6 @@ var hpp = require("hpp");
 var app = express();
 var env = process.env.NODE_ENV || "development";
 var indexRouter = require("./routes/index");
-var expressSwagger = require("express-swagger-generator")(app);
 
 // Compress all HTTP responses
 app.use(
@@ -81,9 +80,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
-// swager docs
-expressSwagger(swagerConfig);
 
 // Index route
 app.use("/", indexRouter);

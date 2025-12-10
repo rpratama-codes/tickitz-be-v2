@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "generate-swagger": "npx express-swagger-generator -i ./app.js -o ./swagger.json -c ./swagger-config.json",
     "start": "node ./api/index.js",
     "dev": "nodemon ./api/index.js"
   },
@@ -20,7 +19,6 @@
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
     "express-fileupload": "^1.4.0",
-    "express-swagger-generator": "^1.1.17",
     "helmet": "^7.0.0",
     "hpp": "^0.2.3",
     "ioredis": "^4.28.2",

@@ -1,0 +1,19 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: tickitz-be-v2-ingressroute
+  namespace: tickitz
+  labels:
+    app.kubernetes.io/name: tickitz-be-v2
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`api.tickitz.rpratama.web.id`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: tickitz-be-v2-svc
+          port: 80
+  # Uncomment to enable TLS with a secret or cert-resolver
+  tls: {}

@@ -5,8 +5,11 @@ let options = {
       title: "Swagger",
       version: "1.0.0",
     },
-    host: "localhost:3200",
+    host: process.env.APP_URL
+      ? process.env.APP_URL.replace(/^https?:\/\//, "")
+      : "api.tickitz.rpratama.web.id",
     basePath: "/v1",
+    schemes: ["https", "http"],
     produces: ["application/json", "application/xml"],
     securityDefinitions: {
       JWT: {
@@ -20,4 +23,4 @@ let options = {
   files: ["../routes/**/*.js", "../controllers/**/*.js"], //Path to the API handle folder
 };
 
-module.exports = options
+module.exports = options;

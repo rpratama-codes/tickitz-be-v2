@@ -14,6 +14,6 @@ spec:
       kind: Rule
       services:
         - name: tickitz-be-v2-svc
-          port: 80
+          port: 3000
   # Uncomment to enable TLS with a secret or cert-resolver
   tls: {}

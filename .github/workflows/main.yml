@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
+      - master
 
 env:
   DOCKERHUB_USERNAME: rizqipratama1st
-  IMAGE_NAME: rizqipratama1st/tickitz-be-v2:latest
+  IMAGE_NAME: rizqipratama1st/tickitz-be-v2
 
 jobs:
   # 1. Build native architecture images in parallel
